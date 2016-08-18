@@ -26,6 +26,7 @@ public class GraphicalInterface extends JFrame implements WindowListener {
 	private JPanel leftGamePanel;
 	private JPanel rightGamePanel;
 	private JPanel outerMostPanel;
+	private JPanel newGameButton;
 	private JLabel[][] leftBattleGrid;
 	private JLabel[][] rightBattleGrid;
 
@@ -150,6 +151,9 @@ public class GraphicalInterface extends JFrame implements WindowListener {
 		//
 		// 3. Finally, construct the outermost panel, whilst adding the battle
 		// grid panel and button panel (put the buttons above the battle grid).
+		
+		newGameButton = new JPanel();
+		newGameButton.setLayout(new FlowLayout());
 
 		outerMostPanel = new JPanel();
 		outerMostPanel.setLayout(new GridLayout());
