@@ -23,6 +23,8 @@ public class GraphicalInterface extends JFrame implements WindowListener {
 	private static ImageIcon vShipMiddleSquare = makeImageIcon("vShipMiddle.png");
 
 	private BattleShipsGame game;
+	private JPanel leftGamePanel;
+	private JPanel rightGamePanel;
 	private JPanel outerMostPanel;
 	private JLabel[][] leftBattleGrid;
 	private JLabel[][] rightBattleGrid;
