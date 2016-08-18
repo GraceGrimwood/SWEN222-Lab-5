@@ -3,8 +3,10 @@ package swen222.battleships;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.JButton;
 
 public class GraphicalInterface extends JFrame implements WindowListener {
 	/**
@@ -23,10 +25,8 @@ public class GraphicalInterface extends JFrame implements WindowListener {
 	private static ImageIcon vShipMiddleSquare = makeImageIcon("vShipMiddle.png");
 
 	private BattleShipsGame game;
-	private JPanel leftGamePanel;
-	private JPanel rightGamePanel;
 	private JPanel outerMostPanel;
-	private JPanel newGameButton;
+	private JPanel newGameButtonPanel;
 	private JLabel[][] leftBattleGrid;
 	private JLabel[][] rightBattleGrid;
 
@@ -151,9 +151,16 @@ public class GraphicalInterface extends JFrame implements WindowListener {
 		//
 		// 3. Finally, construct the outermost panel, whilst adding the battle
 		// grid panel and button panel (put the buttons above the battle grid).
-		
-		newGameButton = new JPanel();
-		newGameButton.setLayout(new FlowLayout());
+		JButton newGameButton = new JButton("New Game");
+		newGameButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				drawBoard();
+			}
+		});
+		newGameButtonPanel = new JPanel();
+		newGameButtonPanel.setLayout(new FlowLayout());
+		newGameButtonPanel.add(newGameButton);
 
 		outerMostPanel = new JPanel();
 		outerMostPanel.setLayout(new GridLayout());
